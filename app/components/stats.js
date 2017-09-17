@@ -13,6 +13,18 @@ export default class Stats extends React.Component {
                 today.push(stats[i])
             }
         }
+
+        if (today.length == 0) {
+            return (
+            <h1>You had 0 meals today
+            You had 0 vegetables today
+            You had 0 carbs today
+            You had 0 drinks today
+            You had 0 fat today</h1>
+            )
+        }
+
+        else {
         
         for (var i = 0; i < today.length; i++) {
             veg.push(parseInt(today[i].veg))
@@ -50,12 +62,14 @@ export default class Stats extends React.Component {
             You had {drink} drinks today
             You had {fat} fat today</h1>
             )
+        }
     }
 
     render () {
         if (!this.props.history.length) {
             return <p>Enter a meal to get started</p>;
         }
+
         return (
             
             <div>
