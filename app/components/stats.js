@@ -1,4 +1,5 @@
 import React from "react";
+import Time from 'react-time';
 
 export default class Stats extends React.Component {
     mealStats () {
@@ -7,6 +8,8 @@ export default class Stats extends React.Component {
         let datematch = new Date().getDay()
         let mealsToday = 0
         let today = [], veg = [], carb = [], drink = [], fat = [], protein = []
+        let now = new Date();
+
 
         for (var i = 0; i < stats.length; i++) {
             if (datematch == stats[i].day) {
@@ -16,11 +19,76 @@ export default class Stats extends React.Component {
 
         if (today.length == 0) {
             return (
-            <h1>You had 0 meals today
-            You had 0 vegetables today
-            You had 0 carbs today
-            You had 0 drinks today
-            You had 0 fat today</h1>
+            <section className="statistics-section section-space-padding bg-cover text-center" data-stellar-background-ratio="0.3">
+                <div className="container">
+                <div className="section-title">
+                        <h2>Today's Statistics</h2>
+                        <p><Time value={now} format="MM/DD/YYYY"/></p>
+                </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-cutlery color-1"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Number of Meals Eaten</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-leaf color-4"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Vegetables</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-coffee color-5"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Drinks Consumed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-check-square-o color-2"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Protein</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-tint color-3"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Fat</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-birthday-cake color-6"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Carbohydrates</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             )
         }
 
@@ -56,18 +124,158 @@ export default class Stats extends React.Component {
         console.log(today)
         console.log(mealsToday, veg, carb, drink, fat, protein)
         return (
-            <h1>You had {mealsToday} meals today
-            You had {veg} vegetables today
-            You had {carb} carbs today
-            You had {drink} drinks today
-            You had {fat} fat today</h1>
+
+            <section className="statistics-section section-space-padding bg-cover text-center" data-stellar-background-ratio="0.3">
+                <div className="container">
+                <div className="section-title">
+                        <h2>Today's Statistics</h2>
+                        <p><Time value={now} format="MM/DD/YYYY"/></p>
+                </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-cutlery color-1"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={mealsToday} className="statistics-count">{mealsToday}</span></h5><span>Number of Meals Eaten</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-leaf color-4"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={veg} className="statistics-count">{veg}</span></h5><span>Servings of Vegetables</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-coffee color-5"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={drink} className="statistics-count">{drink}</span></h5><span>Drinks Consumed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-check-square-o color-2"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={protein} className="statistics-count">{protein}</span></h5><span>Servings of Protein</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-tint color-3"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={fat} className="statistics-count">{fat}</span></h5><span>Servings of Fat</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-birthday-cake color-6"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count={carb} className="statistics-count">{carb}</span></h5><span>Servings of Carbohydrates</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             )
         }
     }
 
     render () {
+        let now = new Date();
         if (!this.props.history.length) {
-            return <p>Enter a meal to get started</p>;
+            return (
+            <section className="statistics-section section-space-padding bg-cover text-center" data-stellar-background-ratio="0.3">
+                <div className="container">
+                <div className="section-title">
+                        <h2>Today's Statistics</h2>
+                        <p><Time value={now} format="MM/DD/YYYY"/></p>
+                </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-cutlery color-1"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Number of Meals Eaten</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-leaf color-4"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Vegetables</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-coffee color-5"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Drinks Consumed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="statistics-center">
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-check-square-o color-2"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Protein</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-tint color-3"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Fat</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-md-4 col-sm-6">
+                                <div className="statistics">
+                                    <div className="statistics-icon"><i className="fa fa-birthday-cake color-6"></i>
+                                    </div>
+                                    <div className="statistics-content">
+                                        <h5><span data-count="0" className="statistics-count">0</span></h5><span>Servings of Carbohydrates</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                )
         }
 
         return (

@@ -8,19 +8,20 @@
     "build": "webpack -w",
     "dev": "webpack & node server",
     "start": " webpack -w  & node server "
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-router": "^4.1.1",
     "axios": "^0.12.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "moment": "^2.18.1",
     "mongoose": "^4.5.1",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^4.1.1",
+    "react-time": "^4.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
