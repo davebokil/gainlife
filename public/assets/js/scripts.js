@@ -98,7 +98,7 @@
 		
         $(window).load(function(){
         $(".typing").typed({
-            strings: ["Welcome to SERVINGS", "A nutrition tracking feature.", "Built for Sean and Jonathan at Gain Life.", "Lets get started:", "Enter a meal in order to track your food group servings for the day"],
+            strings: ["Welcome to SERVINGS", "A nutrition tracking feature.", "Click on 'meal history' to view all of your logged meals.", "or...", "Enter a meal in order to track your food group servings for today."],
             typeSpeed: 15
           });
          });
